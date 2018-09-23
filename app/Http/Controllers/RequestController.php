@@ -24,7 +24,13 @@ class RequestController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $id =Sentry::getUser()->id;
+        $request->user_id=$id;
+        $request->request_type=0;
+        $request->status_id=0;
+        $request->item_name = request('name');
+        $request->item_count = request('count');
+        $request->save();
     }
 
     /**

@@ -15,7 +15,7 @@
         </div>
 
         <div class="form-group">
-            <button style="cursor:pointer" class="btn btn-primary" type="button">Add new asset</button>
+            <button style="cursor:pointer" class="btn btn-primary" type="button" onclick="appendRow">Add new asset</button>
         </div>
 
         <div id="div">
@@ -25,5 +25,12 @@
         </div>
         
     </form>
- 
+<script>
+var x=2
+function appendRow()
+{
+   var d = document.getElementById('div');
+   d.innerHTML += "<label>Name :</label><input type='text' id='name"+ x++ +"'><br ><label>Count :</label><input type='text' id='count"+ x++ +"'><br >";
+}
+</script> 
 @endsection
